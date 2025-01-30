@@ -37,12 +37,12 @@ jobs:
       - name: 使用特定 Gradle 版本（8.3）
         run: |
           mkdir -p ~/.gradle/wrapper/dists
-          curl -o ~/.gradle/wrapper/dists/gradle-8.3-bin.zip https://services.gradle.org/distributions/gradle-8.3-bin.zip
-          echo "distributionUrl=https://services.gradle.org/distributions/gradle-8.3-bin.zip" > gradle/wrapper/gradle-wrapper.properties
+          curl -o ~/.gradle/wrapper/dists/gradle-8.7-bin.zip https://services.gradle.org/distributions/gradle-8.7-bin.zip
+          echo "distributionUrl=https://services.gradle.org/distributions/gradle-8.7-bin.zip" > gradle/wrapper/gradle-wrapper.properties
 
       - name: 编译 APK
         run: ./gradlew assembleDebug --warning-mode all
-
+        
       - name: 上传 APK 作为构建产物
         uses: actions/upload-artifact@v4
         with:
