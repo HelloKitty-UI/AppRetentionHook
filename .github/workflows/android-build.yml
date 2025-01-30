@@ -3,16 +3,10 @@ name: CI
 on:
   push:
     branches:
-      - master
-    tags:
-      - '*'
+      - main  # 监听 main 分支的提交
   pull_request:
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.txt'
-      - '**/*.png'
-      - '**/*.jpg'
-- main
+    branches:
+      - main
   workflow_dispatch:  # 允许手动触发
 
 jobs:
