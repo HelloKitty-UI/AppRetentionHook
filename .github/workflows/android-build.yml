@@ -31,15 +31,6 @@ jobs:
         run: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
 
-      - name: 赋予 Gradle 可执行权限
-        run: chmod +x gradlew
-        
-      - name: 使用特定 Gradle 版本（8.3）
-        run: |
-          mkdir -p ~/.gradle/wrapper/dists
-          curl -o ~/.gradle/wrapper/dists/gradle-8.7-bin.zip https://services.gradle.org/distributions/gradle-8.7-bin.zip
-          echo "distributionUrl=https://services.gradle.org/distributions/gradle-8.7-bin.zip" > gradle/wrapper/gradle-wrapper.properties
-
       - name: 编译 APK
         run: ./gradlew assembleDebug --warning-mode all
         
