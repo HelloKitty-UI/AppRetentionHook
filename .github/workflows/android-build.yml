@@ -33,6 +33,8 @@ jobs:
         run: |
           touch local.properties
           echo "sdk.dir=$ANDROID_HOME" > local.properties
+      - name: 清理 Gradle 缓存
+        run: ./gradlew clean
 
       - name: 编译 Debug APK
         run: ./gradlew assembleDebug --warning-mode all
